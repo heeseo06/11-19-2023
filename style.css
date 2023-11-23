@@ -40,7 +40,7 @@ h1 {
     background-color: #D9BBF9; /* Change this color to suit your design */
     color: white; /* Change this color to suit your design */
 }
-  
+
 #submit_button:hover {
 background-color: #9f5692; /* Darker green on hover */
 color: #ffffff;
@@ -54,4 +54,8 @@ input::placeholder{
     font-size: 15px;
     float: left;
     margin-left: 0;
+}
+
+#apple {
+    font-size: 50px;
 }
