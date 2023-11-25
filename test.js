@@ -112,3 +112,51 @@
 
 //   // Call the asynchronous function
 //   processData();
+
+
+let lat = a["weather"][0]["main"];
+let a = {
+  "coord": {
+    "lon": -122.3321,
+    "lat": 47.6062
+  },
+  "weather": [
+    {
+      "id": 804,
+      "main": "Clouds",
+      "description": "overcast clouds",
+      "icon": "04n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 283.5,
+    "feels_like": 282.55,
+    "temp_min": 281.13,
+    "temp_max": 285.02,
+    "pressure": 1023,
+    "humidity": 75
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 3.6,
+    "deg": 180
+  },
+  "clouds": {
+    "all": 100
+  },
+  "dt": 1700623781,
+  "sys": {
+    "type": 2,
+    "id": 2041694,
+    "country": "US",
+    "sunrise": 1700580192,
+    "sunset": 1700612850
+  },
+  "timezone": -28800,
+  "id": 5809844,
+  "name": "Seattle",
+  "cod": 200
+}
+
+a
