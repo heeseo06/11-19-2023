@@ -7,7 +7,7 @@ let box = document.getElementById("input-box");
 box.addEventListener("keypress", (event) => {
   if (event.keyCode == 13) {
     // changeHTML(box.value);
-    alert("alert!");
+    link(box.value);
     reset();
   }
 })
@@ -26,11 +26,22 @@ function reset() {
 }
 
 async function link(city) {
+
+  let content;
+  let data;
   try {
-    let content = await fetch(`${weatherApi.baseUrl}?q=${city}&appid=${weatherApi.key}&units=metric`);
-    let data = await content.json();
+    // content = await fetch(`${weatherApi.baseUrl}?q=${city}&appid=${weatherApi.key}&units=metric`);
+    content = await fetch("wdfljao");
+    data = await content.json();
+
+  } catch (e) {
+    console.error(e);
+  }
+
     let temp = data["main"]["temp"];
     let weatherMain = data["weather"][0]["main"];
+
+    let description = data["weather"][0]["description"];
 
     let unixTime = data["dt"];
     let timeZone = data["timezone"];
@@ -39,19 +50,40 @@ async function link(city) {
 
     let today = new Date((realTime * 1000));
 
-    console.log(today);
-
     let temp_feel = data["main"]["feels_like"];
-    console.log(JSON.stringify(data, null, 2));
-    console.log(temp, temp_feel);
-    console.log(weatherMain, unixTime);
 
-    let text = `Current temp in ${city} is ${temp}`;
+
+    let text = `Temperature in ${city}: ${temp}°C
+    <br> Weather: ${description}`;
+
     changeHTML(text)
-  } catch (e) {
-    console.error(e);
-  }
+    changeBG(weatherMain);
 }
+
+function changeBG(currnetWeather) {
+  if (currnetWeather === 'Clear') {
+
+    document.body.style.backgroundImage = 'url(img/sunny.jpg)';
+  } else if (currentWeather === 'Clouds') {
+    document.body.style.backgroundImage = 'url(img/sunny.jpg)';
+  } else if (currentWeather === 'Rain') {
+    document.body.style.backgroundImage = 'url(img/sunny.jpg)';
+  } else if (currentWeather === 'Snow') {
+    document.body.style.backgroundImage = 'url(img/sunny.jpg)';
+  } else if (currentWeather === 'Sunny') {
+    document.body.style.backgroundImage = 'url(img/sunny.jpg)';
+  } else if (currentWeather === 'Thunderstorm') {
+    document.body.style.backgroundImage = 'url(img/sunny.jpg)';
+  } else if (currentWeather === 'Drizzle') {
+    document.body.style.backgroundImage = 'url(img/sunny.jpg)';
+  } else if (currentWeather === 'Mist') {
+    document.body.style.backgroundImage = 'url(img/sunny.jpg)';
+  }
+  else {
+    document.body.style.backgroundImage = 'url(img/rain.webp)';
+  }
+};
+
 
 function changeHTML(text) {
   let op = document.getElementById("info");
@@ -63,12 +95,10 @@ function changeHTML(text) {
     <p id="apple">${text}</p>
   </div>
   `;
+
   parent.append(op);
 }
 
 
-
-// link("Seattle");
-// button.addEventListener("click", alert("lakjflasj"));
 // http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=98d4e0ae686e42c873d2a0575825fe83
 // https://api.openweathermap.org/data/2.5/weather?lat=51&lon=0&appid=9f23b56e8dcad8299bf4e5a2a3fc932b&units=metric
