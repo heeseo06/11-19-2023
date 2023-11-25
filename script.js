@@ -6,7 +6,7 @@ const weatherApi = {
 let box = document.getElementById("input-box");
 box.addEventListener("keypress", (event) => {
   if (event.keyCode == 13) {
-    // changeHTML(box.value);
+    changeHTML(box.value);
     link(box.value);
     reset();
   }
@@ -14,7 +14,7 @@ box.addEventListener("keypress", (event) => {
 
 let button = document.getElementById("submit_button");
 button.addEventListener("click", function() {
-  // changeHTML(box.value);
+  changeHTML(box.value);
   link(box.value);
   reset();
 });
@@ -30,8 +30,7 @@ async function link(city) {
   let content;
   let data;
   try {
-    // content = await fetch(`${weatherApi.baseUrl}?q=${city}&appid=${weatherApi.key}&units=metric`);
-    content = await fetch("wdfljao");
+    content = await fetch(`${weatherApi.baseUrl}?q=${city}&appid=${weatherApi.key}&units=metric`);
     data = await content.json();
 
   } catch (e) {
