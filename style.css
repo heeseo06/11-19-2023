@@ -15,13 +15,21 @@ body {
 #header {
     background-color: #EEEBD3;
     width: 20vw;
-    margin: 20% 40%;
+    margin: 10% 40% 10% 40%;
+    padding: 5px 30px 30px 30px;
     text-align: center;
     color: #010400;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to top,
+        #b4da1e,
+        #5a9475
+    );
 }
 
 h1 {
-    font-size: 3vw;
+    font-size: 60px;
     font-family: 'font1';
     font-weight: bold;
 }
@@ -62,4 +70,22 @@ input::placeholder{
     font-size: 30px;
     font-family: 'font1';
     text-transform: capitalize;
+}
+
+#weather_text {
+    font-size: 30px;
+}
+
+#time{
+    font-size: 25px;
+}
+
+#container {
+    border-radius: 10px;
+    background: linear-gradient(
+        to top,
+        #271eda,
+        #50a1af
+    );
+    padding: 20px;
 }
