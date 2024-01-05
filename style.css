@@ -15,9 +15,10 @@ body {
 #header {
     background-color: #EEEBD3;
     width: 20vw;
-    margin: 20% 40%;
+    margin: 5% 40%;
     text-align: center;
     color: #010400;
+    padding: 20px;
 }
 
 h1 {
@@ -62,4 +63,34 @@ input::placeholder{
     font-size: 30px;
     font-family: 'font1';
     text-transform: capitalize;
+}
+
+#place-container {
+    color: #fff;
+    padding: 20px;
+    line-height: 2rem;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to top,
+        #da1e4e,
+        #e4603a
+    );
+}
+
+#header {
+    width: 30vw;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    background: linear-gradient(
+      to top,
+      #92fe9d,
+      #c0dfec
+    );
+}
+
+#weather {
+    font-size: 50px;
 }
